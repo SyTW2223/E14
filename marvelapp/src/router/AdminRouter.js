@@ -3,10 +3,12 @@ import {Routes, Route} from "react-router-dom";
 import {Auth, Users, Blog} from "../pages/admin";
 import {AdminLayout} from "../layouts";
 import { map } from "lodash";
+import { useAuth } from "../hooks";
 
-const user = null;
 
 export  function AdminRouter() {
+    const { user } = useAuth();
+    
     const loadLayout = (Layout, Page) => {
         return (
             <Layout>
