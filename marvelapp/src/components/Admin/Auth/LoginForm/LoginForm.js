@@ -8,7 +8,7 @@ import { useAuth } from '../../../../hooks';
 const authController = new Auth();
 
 export function LoginForm() {
-    const { login } = useAuth();
+    const {login} = useAuth() || {}; // {} Evita el error al desestructurar
     const formik = useFormik({
         initialValues: initialValues(),
         validationSchema: validationSchema(),
