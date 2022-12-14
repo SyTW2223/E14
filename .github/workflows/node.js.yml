@@ -21,6 +21,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    # FRONTEND
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
@@ -32,4 +33,17 @@ jobs:
       run: npm install
     - name: Tests
       working-directory: ./marvelapp
+      run: npm test
+    # BACKEND
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        cache-dependency-path: './server/package-lock.json'
+    - name: Install dependencies
+      working-directory: ./server
+      run: npm install
+    - name: Tests
+      working-directory: ./server
       run: npm test
