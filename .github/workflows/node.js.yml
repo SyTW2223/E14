@@ -27,8 +27,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         cache-dependency-path: './marvelapp/package-lock.json'
-    - run:
-          cd ../../marvelapp
-          pwd
+    - run: |
           npm install
-    - run: npm test
+          npm test
