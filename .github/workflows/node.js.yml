@@ -22,7 +22,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     # FRONTEND
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js ${{ matrix.node-version }} for FRONTEND
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
@@ -35,7 +35,7 @@ jobs:
       working-directory: ./marvelapp
       run: npm test
     # BACKEND
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js ${{ matrix.node-version }} for BACKEND
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
