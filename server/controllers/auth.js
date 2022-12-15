@@ -40,16 +40,16 @@ function login(req, res) {
     
     const emailLowerCase = email.toLowerCase();
 
-    console.log(emailLowerCase);
+    //console.log(emailLowerCase);
 
     User.findOne({email: emailLowerCase}, (error, userStore) =>
     {
         if(error) {
-            console.log("PINCHE ERROR")
+            //console.log("PINCHE ERROR")
             res.status(400).send({msg: "Error del servidor"});
         } else {
             if(userStore){
-                console.log("PINCHE NO ERROR")
+                //console.log("PINCHE NO ERROR")
                 bcrypt.compare(password, userStore.password, (bcryptError, check) => {
                     if(bcryptError) {
                         res.status(500).send({msg: "Error del servidor al desencriptar"});
