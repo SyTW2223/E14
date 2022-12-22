@@ -9,7 +9,7 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "coverage": "npm run test --coverage",
-    "coveralls": "coveralls < coverage/lcov.info"
+    "coveralls": "jest --testTimeout=60000 --coverage"
   },
   "author": "SYTW E14",
   "license": "ISC",
