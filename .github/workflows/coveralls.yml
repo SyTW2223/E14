@@ -30,6 +30,8 @@ jobs:
       run: npm install
     - name: Generating coverage information
       run: npm run coverage
+    - name: Sending info to coveralls
+      run: npm run coveralls
     - name: Coveralls GitHub Action
       uses: coverallsapp/github-action@master
       with:
