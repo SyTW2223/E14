@@ -8,7 +8,8 @@
     "test": "jest --testTimeout=60000",
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "coverage": "npm run test --coverage && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage"
+    "coverage": "npm run test --coverage",
+    "coveralls": "coveralls < coverage/lcov.info"
   },
   "author": "SYTW E14",
   "license": "ISC",
