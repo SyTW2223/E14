@@ -1,0 +1,10 @@
+@import "~/src/scss/index.scss";
+
+.footer-info {
+    width: 33.33%;
+    color: $text-light;
+    p {
+        opacity: 0.4;
+        margin: 20px 0;
+    }
+}
