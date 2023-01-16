@@ -17,4 +17,9 @@ export const ENV = {
     ACCESS: "access",
     REFRESH: "refresh",
   },
+  //1f1de0f504a8d9b40f884073e6d1df1bdb659d3c3b5e1ee4e561ec0224a594912716ad175
+  //hash 6e7943c7f421e1cdc4194b4a161ad67a
+  MARVEL_PUBLIC_KEY: `b5e1ee4e561ec0224a594912716ad175 `,
+  MARVER_PRIVATE_KEY:`f1de0f504a8d9b40f884073e6d1df1bdb659d3c3 `,
+  MARVEL_HASH: `6e7943c7f421e1cdc4194b4a161ad67a`,
 }
