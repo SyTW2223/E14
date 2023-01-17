@@ -4,6 +4,7 @@ import {useFormik} from "formik";
 import { initialValues, validationSchema } from "./LoginForm.form";
 import {Auth} from "../../../../api"
 import { useAuth } from '../../../../hooks';
+import { Link } from "react-router-dom";
 
 const authController = new Auth();
 
@@ -45,6 +46,11 @@ export function LoginForm() {
       <Form.Button type="submit" primary fluid loading={formik.isSubmitting}>
         Entrar
       </Form.Button>
+      <Link to='/'>
+          <Form.Button secondary fluid>
+              Volver a Inicio
+          </Form.Button>
+        </Link>
     </Form>
   );
 }

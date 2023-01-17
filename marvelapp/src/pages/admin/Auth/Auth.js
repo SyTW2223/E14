@@ -30,9 +30,6 @@ export  function Auth() {
   return (
     <div className="auth">
       <Icon.LogoApp className="logo"/>
-      <Link to="/">
-        <button class="button button2">Shadow on Hover</button>
-      </Link>
       <Tab panes ={panes} className="auth__forms" activeIndex={activeIndex} onTabChange={(_, data) => setActiveIndex(data.ActiveIndex)} />
     </div>
   );
