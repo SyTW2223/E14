@@ -1,7 +1,7 @@
 @import  "~/src/scss/index.scss";
 
 // Characters container
-.characters {
+.copmics {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -21,7 +21,7 @@
   position: relative;
 }*/
 
-.character {
+.copmic {
   width: 10%;
   height: 10%;
   margin: 10px;
@@ -33,7 +33,7 @@
 }
 
 // Character image
-.character__image {
+.copmic__image {
   height :350px;
   width: 250px;
   object-fit: cover;
@@ -47,7 +47,7 @@
 }
 
 // Character name
-.character__name {
+.copmic__name {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -59,7 +59,7 @@
   font-weight: bold;
 }
 
-.character__inner {
+.copmic__inner {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -70,7 +70,7 @@
   
 }
 
-.character__namee {
+.copmic__namee {
   width: 200px;
   position: absolute;
   top: 0;
@@ -103,7 +103,7 @@
   width: 100%;
 }*/
 
-.character__inner:hover .character__namee {
+.copmic__inner:hover .copmic__namee {
   opacity: 1;
   transform: translateY(0);
   transform: scale(1.2);

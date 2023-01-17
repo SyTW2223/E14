@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import {Icon} from "../../../assets";
 import {Tab} from "semantic-ui-react";
+import { Link } from "react-router-dom";
+
 import "./Auth.scss";
 import {RegisterForm, LoginForm} from "../../../components/Admin/Auth";
 
@@ -28,6 +30,9 @@ export  function Auth() {
   return (
     <div className="auth">
       <Icon.LogoApp className="logo"/>
+      <Link to="/">
+        <button class="button button2">Shadow on Hover</button>
+      </Link>
       <Tab panes ={panes} className="auth__forms" activeIndex={activeIndex} onTabChange={(_, data) => setActiveIndex(data.ActiveIndex)} />
     </div>
   );
