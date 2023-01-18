@@ -28,7 +28,7 @@
   text-align: center;
   overflow: hidden;
   position: relative;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: black;
 }
 
@@ -87,15 +87,19 @@
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.6);
+  //background: rgba(0, 0, 0, 0.6); //Original
+  background: rgb(0,0,0);
+  background: linear-gradient(180deg, rgba(0,0,0,1) 26%, rgba(0,0,0,0.8) 61%, rgba(0,0,0,0.4) 90%, rgba(0,0,0,0) 100%);
   color: $text-light;
-  padding:10px;
+  box-sizing: border-box;
+  padding:25px;
   text-align: center;
-  font-size: 0.8em;
+  font-size: 1em;
   font-weight: bold;
   transition: all 0.5s ease-in-out;
   opacity: 0;
   transform: translateY(-20px);
+  //width: calc(100% - 3em);
 }
 
 

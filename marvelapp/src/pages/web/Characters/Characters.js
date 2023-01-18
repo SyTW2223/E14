@@ -1,9 +1,14 @@
-import React from 'react';
-import Characters from '../../../components/Web/Characters/Character'
+import React, { useState } from 'react';
+
+import {Characters} from '../../../components/Web';
+import {BarraBusqueda} from "../../../components/Web/BarraBusqueda";
+
 export function PersonajesPagina() {
+  const [heroes, setHeroes] = useState([]);
   return (
     <div>
-        <h1>Estamos en characters</h1>
+        <h1>PERSONAJES</h1>
+        <BarraBusqueda setter={setHeroes}/>
         <Characters /> {/* Llamada a componente de REACT */}
     </div>
   );

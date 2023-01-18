@@ -30,11 +30,12 @@
   position: relative;
   border-radius: 30px;
   //background-color: black;
+  //border: 2px solid rgb(0, 0, 0);
 }
 
 // Character image
 .character__image {
-  height :350px;
+  height: 350px;
   width: 250px;
   object-fit: cover;
   transition: transform 0.5s ease;
