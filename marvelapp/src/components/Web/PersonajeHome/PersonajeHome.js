@@ -27,7 +27,7 @@ export function PersonajeHome() {
   }
   return (
     <div className = "container__personajes">
-      <h2 className='personajes-title'>Personajes</h2>
+      <h2 className='personajes-title'>Personajes Recomendados</h2>
       <div className="zona-personajes-home">
         {characters.map((character) => {
           let portada_personaje = "";

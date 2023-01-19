@@ -21,7 +21,7 @@ export function ComicsHome() {
 
   return (
     <div className = "container__personajes">
-      <h2 className='personajes-title'>Comics</h2>
+      <h2 className='personajes-title'>Comics Recomendados</h2>
       <div className="zona-personajes-home">
         {comics.map((comic) => {
           let portada_comic = "";
