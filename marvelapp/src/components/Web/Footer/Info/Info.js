@@ -7,7 +7,9 @@ import "./Info.scss";
 export function Info() {
   return (
     <div className="footer-info">
-        <p>La gusta lo kinki nasti y aunque sea fanci le gusta romantic, le gusta eñl sexo en exeso y emn el proceso me pide un beso</p>
+        <p>Aplicación creada para la asignatura de "Sistemas y tecnologías web" del curso 2022/2023, perteneciente al grado de Ingeniería informática de la ULL.
+          Se está haciendo uso de la API de MARVEL sin fines comerciales, meramente educativos.
+        </p>
     </div>
   );
 }
