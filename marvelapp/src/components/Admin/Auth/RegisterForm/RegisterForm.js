@@ -5,6 +5,7 @@ import {useFormik} from "formik";
 import {Auth} from "../../../../api"
 import {initialValues, validationSchema} from "./RegisterForm.form";
 import "./RegisterForm.scss";
+import { Link } from "react-router-dom";
 
 const authController = new Auth();
 
@@ -86,6 +87,11 @@ export  function RegisterForm(props) {
         <Form.Button type="submit" primary fluid loading={formik.isSubmitting}>
             Crear cuenta
         </Form.Button>
+        <Link to='/'>
+          <Form.Button secondary fluid>
+              Volver a Inicio
+          </Form.Button>
+        </Link>
         <p className="register-form__error">{error}</p>
     </Form>
   );

@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import { NavLink } from "react-router-dom";
 import { Container, Button } from 'semantic-ui-react';
 import { Link } from "react-router-dom";
 import { map } from "lodash";
@@ -21,6 +22,7 @@ export function TopBar() {
     //         }
     //     }) ();
     // }, []);
+
   return (
     <div className="top-bar">
         <Container>
@@ -28,13 +30,24 @@ export function TopBar() {
                 <Link to="/" className="logo">
                     <Icon.LogoApp />
                 </Link>
-                <div className='menu'>
-                    {/* {map(menu, (item) =>(
+                <Link to="/personajes" className="text">
+                    Personajes
+                </Link>
+                <Link to="/comics" className="text">
+                   Comics
+                </Link>
+                <Link to="/admin" className="text">
+                   Acceso
+                </Link>
+                
+
+                {/*<div className='menu'>
+                     {map(menu, (item) =>(
                     <a key={item._id} href={item.path}>
                         {item.title}
                     </a> 
-                    ))} */}
-                </div>
+                    ))} 
+                </div> */}
             </div>
         </Container>
     </div>

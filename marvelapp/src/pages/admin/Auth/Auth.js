@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import {Icon} from "../../../assets";
 import {Tab} from "semantic-ui-react";
+import { Link } from "react-router-dom";
+
 import "./Auth.scss";
 import {RegisterForm, LoginForm} from "../../../components/Admin/Auth";
 

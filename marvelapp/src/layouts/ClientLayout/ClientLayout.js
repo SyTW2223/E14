@@ -14,11 +14,11 @@ export  function ClientLayout(props) {
         <div className="client-layout__footer">
           <Container>
           <Footer.Info />
-          <span>MENU</span>
-          <span>NEWSLETTER</span>
+          <span>TEST1</span>
+          <span>TEST2</span>
           </Container>
           <Container>
-          <span>TODOS LOS DERECHOS RESERVADOS</span>
+          <span>GRUPO E14</span>
           <span>Jonay Estévez Díaz</span>
           <span>Marcos Jesús Santana Ramos</span>
           <span>Eduardo Da Silva Yanes</span>
@@ -27,3 +27,6 @@ export  function ClientLayout(props) {
     </div>
   );
 }
+
+
+

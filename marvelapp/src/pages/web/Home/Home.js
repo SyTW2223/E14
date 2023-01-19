@@ -1,9 +1,15 @@
 import React from 'react';
+import Characters from '../../../components/Web/Characters/Character';
+//import {HomeData} from '../../../components/Web/'
+import { Banner, PersonajeHome, ComicsHome } from "../../../components/Web";
 
 export function Home() {
   return (
     <div>
-        <h1>Estamos en home</h1>
+      <Banner />
+      <PersonajeHome/>
+      <ComicsHome/>
     </div>
   );
 }
+
