@@ -1,0 +1,28 @@
+@import "~/src/scss/index.scss";
+
+.list-posts {
+    margin-top: 70px;
+    .list {
+        justify-content: center;
+
+        .item {
+            width: 33.33%;
+            padding: 20px;
+        }
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+
+        a {
+            color: rgb(0, 0, 0) !important;
+            opacity: 0.8;
+            &.active {
+                opacity:2;
+                border-color: rgb(0, 0, 0)!important;
+            }
+        }
+    }
+}

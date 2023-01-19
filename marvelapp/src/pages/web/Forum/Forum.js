@@ -1,0 +1,12 @@
+import React from 'react'
+import { Container } from "semantic-ui-react";
+import {ListPosts} from "../../../components/Web/Forum";
+
+
+export  function Forum() {
+  return (
+    <Container>
+        <ListPosts />
+    </Container>
+  )
+}
