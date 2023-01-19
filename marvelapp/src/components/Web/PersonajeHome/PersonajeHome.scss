@@ -1,0 +1,89 @@
+@import  "~/src/scss/index.scss";
+
+.personajes-title {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.container__personajes{
+        //width: 60%;
+
+        //background-color: green;
+}
+
+.zona-personajes-home{
+    //background-color: orange;
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.personaje-home{
+    width: 300px;
+    height: 420px;
+    margin: 10px;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    background-color: black;
+}
+
+.personaje-home:hover .personaje-home__img{
+    transition: all 0.5s ease-in-out;
+    filter: blur(10px) brightness(50%);
+}
+
+.personaje-home:hover .personaje-home__name{
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+}
+
+.personaje-home__img{
+    width: 250px;
+    height :350px;
+    position: absolute;
+    margin: auto;
+    border: 10px solid rgb(141, 18, 18);
+    border-width: 10px;
+    border-style: inset;
+    //border-color: rgb(223, 12, 12);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    object-fit: cover;
+    transition: all 0.5s ease;
+
+}
+
+.personaje-home__name{
+   margin: 0;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   line-height: 1.8;
+  //background: rgba(0, 0, 0, 0.6); //Original
+  //background: linear-gradient(180deg, rgba(0,0,0,1) 26%, rgba(0,0,0,0.8) 61%, rgba(0,0,0,0.4) 90%, rgba(0,0,0,0) 100%);
+  color: $text-light;
+  box-sizing: border-box;
+  padding:25px;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+
+}
+
+.button-personajes{
+    width: 50%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto
+}
