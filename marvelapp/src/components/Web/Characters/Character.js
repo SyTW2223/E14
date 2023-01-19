@@ -29,7 +29,7 @@ export function Characters() {
         {characters.map((character) => {
           if (character.thumbnail.path === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available') return null;
           return (
-            <Link to={`/personajes/${character.id}`}
+            <Link to={`/personajes/${character.id}`} //target="_blank"
               key={character.id} className="character"
               onMouseEnter={() => setHoveredCharacter(character.id)}
               onMouseLeave={() => setHoveredCharacter(null)}

@@ -1,5 +1,5 @@
 import React from 'react';
-import Comics from '../../../components/Web/Comics/Comic'
+import {Comics} from '../../../components/Web'
 export function ComicsPagina() {
   return (
     <div>

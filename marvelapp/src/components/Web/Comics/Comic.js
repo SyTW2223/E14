@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { getComics } from '../../../api/marvel';
+import { Link } from 'react-router-dom';
 import "./Comic.scss";
-function Comics() {
+export function Comics() {
     const [comics, setComics] = useState([]);
     const [hoveredComic, setHoveredComic] = useState(null);
   
@@ -37,7 +38,7 @@ function Comics() {
            {comics.map((comic) => {
              if (comic.thumbnail.path === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available') return null;
              return (
-               <div 
+               <Link to={`/comics/${comic.id}`}
                  key={comic.id} className="comic"
                  onMouseEnter={() => setHoveredComic(comic.id)}
                  onMouseLeave={() => setHoveredComic(null)}
@@ -46,7 +47,7 @@ function Comics() {
                   {hoveredComic === comic.id && 
                     <div className="comic__namee animate__animated animate__fadeIn">{comic.title}</div>
                   }
-               </div>
+               </Link>
              );
            })}
          </div>
@@ -54,6 +55,5 @@ function Comics() {
         );
 }
   
-  export default Comics;
   
  
