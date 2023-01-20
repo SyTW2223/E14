@@ -12,7 +12,8 @@ export const ENV = {
     USER: "user",
     USERS: "users",
     POST: "forum",
-    
+    UPDATEINFO: "user/update",
+    REMOVEINFO: "user/remove",
   },
   JWT: {
     ACCESS: "access",

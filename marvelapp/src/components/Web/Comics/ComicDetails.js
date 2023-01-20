@@ -1,10 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { getComics, getComicsbyId } from '../../../api/marvel';
+import {User} from "../../../api/user"
 import { Link, useParams } from 'react-router-dom';
+import {Button, Icon} from "semantic-ui-react"
+import {useAuth} from "../../../hooks"
+
+
+const usuario_api = new User();
+
 export function ComicsDetails() {
-    let {id} = useParams(); //El nombre ha de ser el mismo con el que se definio el parametro.
+  const {accessToken, user} = useAuth();  
+  let {id} = useParams(); //El nombre ha de ser el mismo con el que se definio el parametro.
     const [comics, setComics] = useState([]);
     const [hoveredComic, setHoveredComic] = useState(null);
+    
   
     useEffect(() => {
       getComicsbyId(id)
@@ -15,7 +24,24 @@ export function ComicsDetails() {
           console.log(error);
         });
     }, []);
+    //console.log(comics[0].title);
+    let value_title = "";
+    comics.map((comic) => {
+     value_title = comic.title 
+    })
+    
+  console.log(value_title);
+  console.log(user);
 
+  const comicData = {comicsFav: `${value_title}`};
+  const obj = JSON.stringify(comicData);
+
+  const handleLikeClick = () => {
+      (async () => {
+        await usuario_api.updateUser(accessToken, user._id, obj);
+      })();
+  }
+  
 
   
   return (
@@ -47,6 +73,10 @@ export function ComicsDetails() {
                   <div>Isbn: {isbn_comic}</div>
                   <h3>Cantidad de páginas</h3>
                   <div>Isbn: {comic.pageCount}</div>  
+                  <Button icon onClick={handleLikeClick}>
+                    <Icon name='heart' />
+                      Like
+                  </Button>
                 </div>
               </div>
              );

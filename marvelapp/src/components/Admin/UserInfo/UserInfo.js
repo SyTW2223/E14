@@ -33,7 +33,11 @@ export function UserInfo() {
         })}</div>
       <div>{user.comicsFav.map}</div>
       <h1>Personajes favoritos</h1>
-     
+      <div>{user.personajesFav.map((heroe) => {
+        return (
+            <div>{heroe}</div>
+        );
+        })}</div>
     </div>
   )
 }

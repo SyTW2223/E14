@@ -34,9 +34,9 @@ export function WebRouter() {
    <Routes>
         <Route path="/" element = {loadLayout(LayoutInUse, Home)} />
         <Route path="/personajes" element = {loadLayout(LayoutInUse, PersonajesPagina)} />
-        <Route path="/comics" element = {loadLayout(ClientLayout, ComicsPagina)} />
-        <Route path="/personajes/:id" element = {loadLayout(ClientLayout, PersonajesDetallesPagina)} /> {/*Redirige a la pagina donde se muestra la info detallada en funcion del id*/}
-        <Route path="/comics/:id" element = {loadLayout(ClientLayout, ComicsPaginaDetalles)} />
+        <Route path="/comics" element = {loadLayout(LayoutInUse, ComicsPagina)} />
+        <Route path="/personajes/:id" element = {loadLayout(LayoutInUse, PersonajesDetallesPagina)} /> {/*Redirige a la pagina donde se muestra la info detallada en funcion del id*/}
+        <Route path="/comics/:id" element = {loadLayout(LayoutInUse, ComicsPaginaDetalles)} />
         <Route path="/foro" element = {loadLayout(LayoutInUse, Forum)} />
         
    </Routes>

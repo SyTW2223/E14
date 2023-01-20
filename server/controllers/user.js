@@ -43,6 +43,7 @@ async function updateUser(req, res){
       res.status(400).send({msg: "Error al actualizar el usuario"});
     }else {
       res.status(200).send({ msg: "Actualización correcta"});
+      console.log(userData);
     }
   });
 }
