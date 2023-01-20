@@ -4,14 +4,11 @@ import { Container, Button } from 'semantic-ui-react';
 import { Link } from "react-router-dom";
 import { map } from "lodash";
 import { Icon } from "../../../assets";
-import { Icon as SemanticIcon } from "semantic-ui-react"
-//import { Menu } from "../../../api"
-import "./TopBar.scss";
+import {LogoutButton} from "../Logout"
 
-//const menuController = new Menu()
+import "./TopBarLogged.scss";
 
-export function TopBar() {
-
+export function TopBarLogged() {
   return (
     <div className="top-bar">
         <Container>
@@ -28,10 +25,10 @@ export function TopBar() {
                 <Link to="/foro" className="text">
                    Foro
                 </Link>
-                <Link to="/admin" className='text'>
-                   
-                   Acceso
+                <Link to="/admin" className="text">
+                   Mi perfil
                 </Link>
+                <LogoutButton/>
             </div>
         </Container>
     </div>

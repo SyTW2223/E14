@@ -1,12 +1,16 @@
 @import  "~/src/scss/index.scss";
 
-.top-bar{
+.top-bar {
     height: 60px;
-    background-color: $background-marvel-red;
+    //background-color: $background-marvel-red;
+    background-color: rgb(237, 29, 36);
+    border-bottom: 2px solid white;
 
     > .ui.container {
-        display: flex;
-        align-items: center;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        //Con lo de arriba centre el div en la posi correcta.
         justify-content: space-between;
         height: 100%;
     }
@@ -16,12 +20,15 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        //background-color: aquamarine;
 
         .logo {
-            height: 60%;
+            height: 100%;
             > svg {
                 height: 100%;
+                width: 100%;
             }
+            background-color: blue;
         }
         .menu {
             margin-left: 20px;
@@ -36,17 +43,24 @@
         }
         .text {
             margin: 0 15px;
-            font-size: 30px;
+            font-size: 35px;
             font-family: Impact, fantasy;
-            padding: 0.5em;
+            padding: 0.4em;
             box-shadow: inset 0 0 0 0 $background-grey;
             color: $text-light;
             transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
-
+            //background-color: green;
             &:hover {
                 box-shadow: inset 0 4em 0 0 $background-grey;
                 color: $background-marvel-red;
             }
+            
+        }
+
+        .text__login {
+            @extend .text;
+            margin: 0px;
+            height: 84%;
         }
     }
 }
