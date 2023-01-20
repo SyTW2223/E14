@@ -76,9 +76,10 @@ export class User {
     }
   }
 
-  async updateUser(accessToken, idUser, userData) {
+  async updateUser(accessToken, idUser, userData, type) {
     try {
       const data = userData;
+      console.log(type);
       console.log(accessToken);
       console.log(idUser);
       console.log(data);
@@ -95,7 +96,11 @@ export class User {
         formData.append("avatar", data.fileAvatar);
       }
 
-      const url = `${ENV.BASE_API}/${ENV.API_ROUTES.UPDATEINFO}/${idUser}`;
+      let rutaAPI = ENV.API_ROUTES.UPDATEINFO;
+      if(type === "remove"){
+        rutaAPI = ENV.API_ROUTES.REMOVEINFO;
+      }
+      const url = `${ENV.BASE_API}/${rutaAPI}/${idUser}`;
       
       console.log(url);
       const params = {
@@ -140,4 +145,6 @@ export class User {
       throw error;
     }
   }
+
+
 }

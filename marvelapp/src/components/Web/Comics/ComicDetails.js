@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getComics, getComicsbyId } from '../../../api/marvel';
 import {User} from "../../../api/user"
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import {Button, Icon} from "semantic-ui-react"
 import {useAuth} from "../../../hooks"
 
@@ -9,7 +9,9 @@ import {useAuth} from "../../../hooks"
 const usuario_api = new User();
 
 export function ComicsDetails() {
-  const {accessToken, user} = useAuth();  
+  const {accessToken, user} = useAuth();
+  const navigate = useNavigate();
+
   let {id} = useParams(); //El nombre ha de ser el mismo con el que se definio el parametro.
     const [comics, setComics] = useState([]);
     const [hoveredComic, setHoveredComic] = useState(null);
@@ -30,6 +32,19 @@ export function ComicsDetails() {
      value_title = comic.title 
     })
     
+  let isFaved;
+  let icon_name = "heart";
+  let icon_text = "FAV";
+  if(user !== null){
+    isFaved = user.comicsFav.some((favName) => favName === value_title);
+    if(isFaved){
+      console.log("ya es favorito");
+      icon_name = "close";
+      icon_text = "UNFAV";
+    }
+  }
+
+
   console.log(value_title);
   console.log(user);
 
@@ -37,9 +52,26 @@ export function ComicsDetails() {
   const obj = JSON.stringify(comicData);
 
   const handleLikeClick = () => {
-      (async () => {
-        await usuario_api.updateUser(accessToken, user._id, obj);
-      })();
+    if(user !== null){
+      if(isFaved){
+        const removeData = {comicsFav: [`${value_title}`]};
+        const removeDataobj = JSON.stringify(removeData);
+        (async () => {
+          await usuario_api.updateUser(accessToken, user._id, removeDataobj, "remove");
+        })();
+      } else {
+        (async () => {
+          await usuario_api.updateUser(accessToken, user._id, obj, "add");
+        })();
+      }
+      
+    
+      window.location.reload();
+    } else {
+      navigate('/admin');
+    }
+
+   
   }
   
 
@@ -72,10 +104,10 @@ export function ComicsDetails() {
                   <h3>ISBN </h3>
                   <div>Isbn: {isbn_comic}</div>
                   <h3>Cantidad de páginas</h3>
-                  <div>Isbn: {comic.pageCount}</div>  
+                  <div>Isbn: {comic.pageCount}</div> 
                   <Button icon onClick={handleLikeClick}>
-                    <Icon name='heart' />
-                      Like
+                    <Icon name= {icon_name}/>
+                      {icon_text}
                   </Button>
                 </div>
               </div>
