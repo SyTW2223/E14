@@ -8,7 +8,9 @@ import "./ListPost.scss";
 
 const postController = new Post ();
 
-export function ListPosts() {
+export function ListPosts(props) {
+  
+  const {reload} = props;
   const [posts, setPosts] = useState(null);
   const [pagination, setPagination] = useState();
   const navigate = useNavigate();
@@ -32,7 +34,7 @@ export function ListPosts() {
         console.error(error);
       }
     })()
-  }, [page]);
+  }, [page, reload]);
 
   const changePage = (_, data) => {
     const newPage = data.activePage;

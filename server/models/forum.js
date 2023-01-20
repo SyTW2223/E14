@@ -13,6 +13,11 @@ const ForumSchema = mongoose.Schema({
         required: true,
         trim: true
     },
+    titulo: {
+        type: String,
+        required: true,
+        trim: true
+    },
     fecha: Date,
     
 }, {versionKey: false,
