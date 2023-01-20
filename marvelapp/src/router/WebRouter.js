@@ -16,7 +16,8 @@ import {Auth, Users, Blog} from "../pages/admin";
 
 export function WebRouter() {
     const { user } = useAuth();
-
+    //console.log("PEDRO SANCHES PIVES");
+    //console.log(user);
     const loadLayout = (Layout, Page) => {
         return (
             <Layout>

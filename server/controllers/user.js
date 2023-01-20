@@ -31,8 +31,42 @@ async function deleteUser(req, res) {
   })
 }
 
+async function updateUser(req, res){
+  const { id } = req.params;
+  const userData = req.body;
+
+  //Password
+  // Avatar
+
+  User.findByIdAndUpdate({_id: id}, { $push: userData}, (error) => {
+    if(error) {
+      res.status(400).send({msg: "Error al actualizar el usuario"});
+    }else {
+      res.status(200).send({ msg: "Actualización correcta"});
+    }
+  });
+}
+
+async function removeDataUser(req, res){
+  const { id } = req.params;
+  const userData = req.body;
+
+  //Password
+  // Avatar
+
+  User.findByIdAndUpdate({_id: id}, { $pullAll: userData}, (error) => {
+    if(error) {
+      res.status(400).send({msg: "Error remover los datos del usuario"});
+    }else {
+      res.status(200).send({ msg: "Actualización correcta"});
+    }
+  });
+}
+
 module.exports = {
   getMe,
   getUsers,
   deleteUser,
+  updateUser,
+  removeDataUser,
 };
