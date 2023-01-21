@@ -28,7 +28,7 @@ export function TopBar() {
                 <Link to="/foro" className="text">
                    Foro
                 </Link>
-                <Link to="/admin" className='text'>
+                <Link to="/auth" className='text'>
                    
                    Acceso
                 </Link>

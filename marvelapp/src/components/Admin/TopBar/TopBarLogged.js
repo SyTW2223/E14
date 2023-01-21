@@ -25,7 +25,7 @@ export function TopBarLogged() {
                 <Link to="/foro" className="text">
                    Foro
                 </Link>
-                <Link to="/admin" className="text">
+                <Link to="/auth/me" className="text">
                    Mi perfil
                 </Link>
                 <LogoutButton/>

@@ -10,7 +10,7 @@ export  function LogoutButton() {
 
 const onLogout= () => {
     logout();
-    navigate("/admin");
+    navigate("/auth");
 }
 
   return (

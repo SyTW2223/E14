@@ -24,17 +24,17 @@ export  function AdminRouter() {
   return (
     <Routes>
      {!user ? (        
-        <Route path="/admin/*" element = {<Auth/>} />
+        <Route path="/auth/*" element = {<Auth/>} />
         ) : (
         <>
-        {["/admin", "/admin/users"].map((path) => (
+        {["/auth", "/auth/me"].map((path) => (
             <Route
             key={path}
             path={path}
-            element={loadLayout(AdminLayout, Users)}
+            element={loadLayout(AdminLayout, SingleUser)}
             />
         ))}
-            <Route path="/admin/:nick" element = {loadLayout(AdminLayout, SingleUser)} />
+            <Route path="/auth/:nick" element = {loadLayout(AdminLayout, SingleUser)} />
         </>
        )}
     </Routes>

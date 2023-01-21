@@ -42,8 +42,24 @@ function deletePost (req, res) {
     }) 
 }
 
+
+async function getPostByUser(req, res) {
+    const {nickname} = req.params;
+    console.log(nickname);
+    const data = {nickname: `${nickname}`};
+    const objData = JSON.stringify(data);
+    console.log(objData);
+    const response = await ForumPost.find(objData);
+    if(!response) {
+      res.status(400).send({msg: "No se ha encontrado ningun archivo de ese usuario"});
+    } else{
+      res.status(200).send(response)
+    }
+  }
+
 module.exports = {
     createPost,
     getPost,
     deletePost,
+    getPostByUser,
 };

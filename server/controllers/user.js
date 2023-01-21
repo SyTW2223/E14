@@ -2,14 +2,18 @@ const  User  = require("../models/user");
 
 async function getMe(req, res) {
   const {user_id} = req.user;
-  const response = await User.findById(user_id)
-  
+  const response = await User.findById(user_id);
+  console.log(user_id);
   if(!response) {
     res.status(400).send({msg: "No se ha encontrado usuario"});
   } else{
     res.status(200).send(response)
   }
 }
+
+
+
+
 
 async function getUsers(req, res) {
   //const { active } = req.query;
@@ -29,6 +33,21 @@ async function deleteUser(req, res) {
       res.status(200).send({msg: "Eliminacion del usuario satisfactoria"});
     }
   })
+}
+
+
+async function getSingleUser(req, res) {
+  console.log("ESTO ES GET SINGLE USER");
+  const { nickname } = req.params;
+  console.log(nickname);
+
+  const response = await User.find({nickname: `${nickname}`}).exec();
+  if(!response) {
+    res.status(400).send({msg: `No se ha encontrado usuario ${nickname}`});
+  } else{
+    console.log(response);
+    res.status(200).send(response)
+  }
 }
 
 async function updateUser(req, res){
@@ -70,4 +89,5 @@ module.exports = {
   deleteUser,
   updateUser,
   removeDataUser,
+  getSingleUser,
 };

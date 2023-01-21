@@ -68,7 +68,7 @@ export function ComicsDetails() {
     
       window.location.reload();
     } else {
-      navigate('/admin');
+      navigate('/auth');
     }
 
    

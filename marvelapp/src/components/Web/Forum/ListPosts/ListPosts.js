@@ -16,6 +16,7 @@ export function ListPosts(props) {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams()
   const [page, setPage] = useState(searchParams.get("page") || 1);
+  //Para buscar los post de una persona concreta podemos usar lo de arriba con un parametro tipo &nickname=pedro
 
   
   useEffect(() => {
