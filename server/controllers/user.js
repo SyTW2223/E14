@@ -3,16 +3,13 @@ const  User  = require("../models/user");
 async function getMe(req, res) {
   const {user_id} = req.user;
   const response = await User.findById(user_id);
-  console.log(user_id);
+  //console.log(user_id);
   if(!response) {
     res.status(400).send({msg: "No se ha encontrado usuario"});
   } else{
     res.status(200).send(response)
   }
 }
-
-
-
 
 
 async function getUsers(req, res) {
@@ -37,9 +34,9 @@ async function deleteUser(req, res) {
 
 
 async function getSingleUser(req, res) {
-  console.log("ESTO ES GET SINGLE USER");
+  //console.log("ESTO ES GET SINGLE USER");
   const { nickname } = req.params;
-  console.log(nickname);
+  //console.log(nickname);
 
   const response = await User.find({nickname: `${nickname}`}).exec();
   if(!response) {
