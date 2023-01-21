@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from 'semantic-ui-react';
 import { getCharacters } from '../../../api/marvel';
 import {BarraBusqueda} from "../../../components/Web/BarraBusqueda";
+import { useLocation } from 'react-router-dom';
 
 
 import "./Character.scss";
@@ -29,6 +30,7 @@ export function Characters() {
     setSelectedCharacterId(id);
     console.log(id);
   }
+
   return (
     <div className = "characters">
       <BarraBusqueda setterSearch= {setSearching} setterHeroes={setCharacters}/>

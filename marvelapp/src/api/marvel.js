@@ -53,6 +53,7 @@ export const getComicsbyId = (value) => {
 
 export const getComicsbyTitle = (value) => {
   //const url = `${API_BASE_URL}/v1/public/characters?ts=1&apikey=${ENV.MARVEL_PUBLIC_KEY}&hash=${ENV.MARVEL_HASH}`;
-  const url = `http://gateway.marvel.com/v1/public/comics?limit=100&ts=1&apikey=b5e1ee4e561ec0224a594912716ad175&hash=6e7943c7f421e1cdc4194b4a161ad67a`;
+  const url = `http://gateway.marvel.com/v1/public/comics?limit=100&ts=1&apikey=b5e1ee4e561ec0224a594912716ad175&hash=6e7943c7f421e1cdc4194b4a161ad67a&titleStartsWith=${value}`;
   return axios.get(url);
+  //https://gateway.marvel.com:443/v1/public/comics?title=Marvel&apikey=b5e1ee4e561ec0224a594912716ad175
 };

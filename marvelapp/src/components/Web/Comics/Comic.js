@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { getComics } from '../../../api/marvel';
 import { Link } from 'react-router-dom';
+import { BarraBusquedaComics } from '../BarraBusquedaComics';
 import "./Comic.scss";
 export function Comics() {
     const [comics, setComics] = useState([]);
     const [hoveredComic, setHoveredComic] = useState(null);
+    const [searchingComic, setSearchingComic] = useState(null);
   
     useEffect(() => {
+      if(searchingComic === null){
       getComics()
         .then((response) => {
           setComics(response.data.data.results);
@@ -14,7 +17,8 @@ export function Comics() {
         .catch((error) => {
           console.log(error);
         });
-    }, []);
+      }
+    }, [searchingComic]);
   
    /*return (
      <div className = "comics">
@@ -34,6 +38,7 @@ export function Comics() {
 
   return (
        <div className = "comics">
+        <BarraBusquedaComics setterSearchComic= {setSearchingComic} setterComics={setComics}/>
          <div className="comic__inner">
            {comics.map((comic) => {
              if (comic.thumbnail.path === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available') return null;
