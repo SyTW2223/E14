@@ -8,7 +8,7 @@ export function PersonajesPagina() {
   return (
     <div>
         <h1>PERSONAJES</h1>
-        <BarraBusqueda setter={setHeroes}/>
+        
         <Characters /> {/* Llamada a componente de REACT */}
     </div>
   );

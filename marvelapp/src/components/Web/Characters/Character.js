@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from 'semantic-ui-react';
 import { getCharacters } from '../../../api/marvel';
+import {BarraBusqueda} from "../../../components/Web/BarraBusqueda";
+
 
 import "./Character.scss";
 
@@ -8,8 +11,10 @@ export function Characters() {
   const [characters, setCharacters] = useState([]);
   const [hoveredCharacter, setHoveredCharacter] = useState(null);
   const [selectedCharacterId, setSelectedCharacterId] = useState(null);
-  
+  const [searching, setSearching] = useState(null);
+
   useEffect(() => {
+    if(searching === null){
     getCharacters()
       .then((response) => {
         setCharacters(response.data.data.results);
@@ -17,7 +22,8 @@ export function Characters() {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+    }
+  }, [searching]);
 
   function handleClick(id) {
     setSelectedCharacterId(id);
@@ -25,6 +31,7 @@ export function Characters() {
   }
   return (
     <div className = "characters">
+      <BarraBusqueda setterSearch= {setSearching} setterHeroes={setCharacters}/>
       <div className="character__inner">
         {characters.map((character) => {
           if (character.thumbnail.path === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available') return null;
