@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useAuth } from "../../../hooks";
 import { DateTime } from "luxon";
 import { Container } from "semantic-ui-react";
@@ -7,7 +7,6 @@ import "./UserInfo.scss";
 
 export function UserInfo() {
   const { user } = useAuth();
-  const [comics, setComics] = useState([]);
 
   const date = new Date(user.createdAt);
 
@@ -17,7 +16,9 @@ export function UserInfo() {
   return (
     <div>
       <div className="zona_info_usuario">
-        <h1 className="titulos_secciones">Información de tu usuario: {user.nickname}</h1>
+        <h1 className="titulos_secciones">
+          Información de tu usuario: {user.nickname}
+        </h1>
         <Container classname="container_user">
           <div className="texto_usuario">
             <h3 className="titulo_info"> Nickname:</h3>
@@ -50,7 +51,8 @@ export function UserInfo() {
         <Container classname="container_gustos">
           <div className="cosas_fav">
             <h3 className="titulo_cosas_fav">Comic favoritos</h3>
-            <div><div class="ui divider"></div>
+            <div>
+              <div class="ui divider"></div>
               {user.comicsFav.map((comic) => {
                 return <div className="info_cosas_fav">{comic}</div>;
               })}
@@ -60,7 +62,7 @@ export function UserInfo() {
           <div className="cosas_fav">
             <h3 className="titulo_cosas_fav">Personajes favoritos</h3>
             <div>
-            <div class="ui divider"></div>
+              <div class="ui divider"></div>
               {user.personajesFav.map((heroe) => {
                 return <div className="info_cosas_fav">{heroe}</div>;
               })}

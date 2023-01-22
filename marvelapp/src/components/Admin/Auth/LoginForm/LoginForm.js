@@ -1,56 +1,56 @@
-import React from 'react';
-import {Form} from "semantic-ui-react";
-import {useFormik} from "formik";
+import React from "react";
+import { Form } from "semantic-ui-react";
+import { useFormik } from "formik";
 import { initialValues, validationSchema } from "./LoginForm.form";
-import {Auth} from "../../../../api"
-import { useAuth } from '../../../../hooks';
+import { Auth } from "../../../../api";
+import { useAuth } from "../../../../hooks";
 import { Link } from "react-router-dom";
 
 const authController = new Auth();
 
 export function LoginForm() {
-    const {login} = useAuth() || {}; // {} Evita el error al desestructurar
-    const formik = useFormik({
-        initialValues: initialValues(),
-        validationSchema: validationSchema(),
-        validationOnChange: false,
-        onSubmit: async (formValue) => {
-            try {
-                const response = await authController.login(formValue); 
-                authController.setAccessToken(response.access);
-                authController.setRefreshToken(response.refresh); 
-                login(response.access)
-            } catch (error) {
-                console.error(error);
-            }
-        },
-    });
+  const { login } = useAuth() || {}; // {} Evita el error al desestructurar
+  const formik = useFormik({
+    initialValues: initialValues(),
+    validationSchema: validationSchema(),
+    validationOnChange: false,
+    onSubmit: async (formValue) => {
+      try {
+        const response = await authController.login(formValue);
+        authController.setAccessToken(response.access);
+        authController.setRefreshToken(response.refresh);
+        login(response.access);
+      } catch (error) {
+        console.error(error);
+      }
+    },
+  });
   return (
     <Form onSubmit={formik.handleSubmit}>
-      <Form.Input 
-        name="email" 
-        placeholder="Correo electrónico" 
-        onChange={formik.handleChange} 
+      <Form.Input
+        name="email"
+        placeholder="Correo electrónico"
+        onChange={formik.handleChange}
         value={formik.values.email}
         error={formik.errors.email}
       />
-      <Form.Input 
-        name="password" 
-        type="password" 
-        placeholder="Contraseña" 
-        onChange={formik.handleChange} 
+      <Form.Input
+        name="password"
+        type="password"
+        placeholder="Contraseña"
+        onChange={formik.handleChange}
         value={formik.values.password}
         error={formik.errors.password}
-       />
+      />
 
       <Form.Button type="submit" primary fluid loading={formik.isSubmitting}>
         Entrar
       </Form.Button>
-      <Link to='/'>
-          <Form.Button secondary fluid>
-              Volver a Inicio
-          </Form.Button>
-        </Link>
+      <Link to="/">
+        <Form.Button secondary fluid>
+          Volver a Inicio
+        </Form.Button>
+      </Link>
     </Form>
   );
 }
