@@ -43,8 +43,6 @@ export function ComicsDetails() {
     }
   }
 
-  console.log(value_title);
-  console.log(user);
 
   const comicData = { comicsFav: `${value_title}` };
   const obj = JSON.stringify(comicData);

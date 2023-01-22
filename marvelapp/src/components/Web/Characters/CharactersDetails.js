@@ -42,8 +42,6 @@ export function CharactersDetails() {
     }
   }
 
-  console.log(value_title);
-  console.log(user);
 
   const personajeData = { personajesFav: `${value_title}` };
   const obj = JSON.stringify(personajeData);
