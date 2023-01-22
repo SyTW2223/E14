@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Button } from "semantic-ui-react";
+import { Container, Button, Divider } from "semantic-ui-react";
 import { ListPosts, PostForm } from "../../../components/Web/Forum";
 import { BasicModal } from "../../../components/Shared";
 import { useAuth } from "../../../hooks";
@@ -28,11 +28,11 @@ export function Forum() {
     <div>
       <div className="titulo">Foro de la comunidad</div>
       <Container>
-        <div class="ui section divider"></div>
+        <Divider/>
         <Button fluid onClick={handleNewPostClick} color="red">
           CREA UN NUEVO COMENTARIO
         </Button>
-        <div class="ui section divider"></div>
+        <Divider/>
         <h3 className="subtitulos">Últimos comentarios</h3>
         <ListPosts reload={reload} />
         <BasicModal

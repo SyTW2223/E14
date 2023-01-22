@@ -14,7 +14,6 @@ export function PersonajeHome() {
     get3RandomCharacters()
       .then((response) => {
         setCharacters(response.data.data.results);
-        console.log(characters);
       })
       .catch((error) => {
         console.log(error);
@@ -40,7 +39,7 @@ export function PersonajeHome() {
           else
             portada_personaje = `${character.thumbnail.path}.${character.thumbnail.extension}`;
           return (
-            <div className="personaje-home">
+            <div className="personaje-home" key={character.id}>
               <img
                 src={portada_personaje}
                 alt={character.name}
