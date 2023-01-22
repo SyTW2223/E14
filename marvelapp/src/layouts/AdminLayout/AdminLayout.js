@@ -1,7 +1,8 @@
 import React from 'react';
 import {Container} from "semantic-ui-react";
 import {TopBarLogged} from "../../components/Admin";
-import "./AdminLayout.scss";
+import {Footer} from "../../components/Web";
+import "../ClientLayout/ClientLayout.scss";
 
 
 export  function AdminLayout(props) {
@@ -14,8 +15,7 @@ export  function AdminLayout(props) {
           {children}
           <div className="client-layout__footer">
             <Container>
-            <span>TEST1</span>
-            <span>TEST2</span>
+            <Footer.Info/>
             </Container>
             <Container>
             <span>GRUPO E14</span>
