@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import { Loader } from "semantic-ui-react";
 import { getCharacters } from "../../../api/marvel";
 import { BarraBusqueda } from "../../../components/Web/BarraBusqueda";
 
@@ -28,6 +28,8 @@ export function Characters() {
     setSelectedCharacterId(id);
     console.log(id);
   }
+
+  if (!characters) return <Loader active inline="centered" />;
 
   return (
     <div className="characters">
