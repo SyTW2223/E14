@@ -37,7 +37,7 @@ export function Comics() {
 
 
   return (
-       <div className = "comics">
+       <div className = "comics" data-testid="zona_comic">
         <BarraBusquedaComics setterSearchComic= {setSearchingComic} setterComics={setComics}/>
          <div className="comic__inner">
            {comics.map((comic) => {

@@ -78,7 +78,7 @@ export function ComicsDetails() {
   
   return (
        <div className = "comics">
-         <div className="comic__inner">
+         <div className="comic__inner" data-testid="zona_comicdetail">
            {comics.map((comic) => {
                 //console.log(comic);
                 if (comic.thumbnail.path === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available') return null;
