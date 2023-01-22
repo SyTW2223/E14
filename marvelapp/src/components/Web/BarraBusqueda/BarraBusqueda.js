@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { getCharactersByName } from '../../../api/marvel';
 import { Input } from 'semantic-ui-react';
 import { useLocation } from 'react-router-dom';
+import { Button, Icon } from 'semantic-ui-react';
 
 import "./BarraBusqueda.scss"
 export function BarraBusqueda({setterSearch, setterHeroes}) {
@@ -29,9 +30,15 @@ export function BarraBusqueda({setterSearch, setterHeroes}) {
         };
 
     return (
-        <form>
-            <input className='input_searchbar' type="text" placeholder='Buscar' ref={input}/>
-            <button onClick={handleClick}>Buscar</button>
+        <form className='form_personaje'>
+            <input className='input_searchbar_personaje' type="text" placeholder='Buscar' ref={input}/>
+            {/* <button onClick={handleClick}>Buscar</button> */}
+            <Button color='red' size='small' animated='vertical' onClick={handleClick}>
+              <Button.Content hidden>Buscar</Button.Content>
+                <Button.Content visible>
+                 <Icon name='search' />
+              </Button.Content>
+            </Button>
         </form>
   )
 }
