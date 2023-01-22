@@ -17,13 +17,18 @@
   &__info {
     display: flex;
     flex-direction: column;
-
+    //background-color: orange;
+    backdrop-filter: blur(2px) brightness(90%);
+    color: white;
     &-title {
       font-weight: bold;
+      font-size: 22px;
+      text-shadow: rgb(0, 0, 0) 5px 0 10px;
+      margin-bottom: 10px;
     }
 
-    &-path {
-      opacity: 0.6;
+    &-publish {
+      opacity: 0.8;
     }
   }
 }
@@ -33,3 +38,13 @@ h2 {
     margin: 10px 0 0 0;
     font-weight: normal;
   }
+
+.post-item__html{
+  //background-color: aqua;
+  padding: 5px 10px;
+  margin: 5px 0px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  color:black;
+  background-color: hsla(0, 0%, 100%, 0.80);
+  border-radius: 5px;
+}

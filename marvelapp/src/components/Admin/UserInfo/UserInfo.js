@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { useAuth } from "../../../hooks";
 import { DateTime } from "luxon";
+import {Container} from "semantic-ui-react";
 
 
 import "./UserInfo.scss"
@@ -17,7 +18,10 @@ export function UserInfo() {
   return (
     <div>
       <h1>Este es el componente con la info del usuario</h1>
-      <div>{user._id}</div>
+      <div class="row">
+    <div class="column"></div>
+    <div class="column"></div>
+    </div>
       <div>{user.nickname}</div>
       <div>{user.nombre}</div>
       <div>{user.edad}</div>

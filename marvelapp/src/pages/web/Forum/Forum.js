@@ -5,7 +5,7 @@ import {BasicModal} from "../../../components/Shared";
 import { useAuth } from "../../../hooks";
 
 import { useNavigate } from 'react-router-dom';
-
+import "./Forum.scss";
 
 export  function Forum() {
   const [showModal, setShowModal] = useState(false);
@@ -26,9 +26,14 @@ export  function Forum() {
   }
 
   return (
+<div> 
+    <div className='titulo'>Foro de la comunidad</div>
     <Container>
+        <div class="ui section divider"></div>
+        <Button fluid  onClick={handleNewPostClick} color='red'>CREA UN NUEVO COMENTARIO</Button>
+        <div class="ui section divider"></div>
+        <h3 className='subtitulos'>Últimos comentarios</h3>
         <ListPosts reload={reload} />
-        <Button onClick={handleNewPostClick} color='green'>Nuevo POST</Button>
         <BasicModal 
           show={showModal} 
           close={onOpenCloseModal} 
@@ -39,5 +44,6 @@ export  function Forum() {
         <PostForm onClose={onOpenCloseModal} onReload={onReload} />
         </BasicModal>
     </Container>
+    </div>
   )
 }
