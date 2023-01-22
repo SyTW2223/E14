@@ -1,11 +1,13 @@
-import React from 'react';
-import {Comics} from '../../../components/Web'
+import React from "react";
+import { Comics } from "../../../components/Web";
+
+import "./comic_main.scss";
+
 export function ComicsPagina() {
   return (
     <div>
-        <h1>Estamos en Comics</h1>
-        <Comics /> {/* Llamada a componente de REACT */}
+      <div className="titulo_comic_main">COMICS</div>
+      <Comics /> {/* Llamada a componente de REACT */}
     </div>
   );
 }
-

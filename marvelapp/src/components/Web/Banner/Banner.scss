@@ -1,44 +1,43 @@
 @import "~/src/scss/index.scss";
 
 .home {
-    height: 830px;
-    background-image: url("../../../assets/jpg/MarvelHomeBackground.jpg");
-    background-position: center;
-    //background-size: contain;
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-    //filter: brightness(0.4);
+  height: 830px;
+  background-image: url("../../../assets/jpg/MarvelHomeBackground.jpg");
+  background-position: center;
+  //background-size: contain;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  //filter: brightness(0.4);
 
-    &__dark {
-        background-color: #000;
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0.7;
-    }
+  &__dark {
+    background-color: #000;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.7;
+  }
 
+  .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-    .container {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
+  h1 {
+    color: $text-light;
+    font-size: 75px;
+    line-height: 70px;
+    z-index: 1;
+  }
 
-    h1 {
-        color: $text-light;
-        font-size: 75px;
-        line-height: 70px;
-        z-index: 1;
-    }
-
-    h2 {
-        color: $text-light;
-        font-size: 100;
-        line-height: 32px;
-        z-index: 1;
-    }
+  h2 {
+    color: $text-light;
+    font-size: 30px;
+    line-height: 32px;
+    z-index: 1;
+  }
 }
