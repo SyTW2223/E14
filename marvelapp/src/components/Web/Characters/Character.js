@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from 'semantic-ui-react';
-import { getCharacters } from '../../../api/marvel';
-import {BarraBusqueda} from "../../../components/Web/BarraBusqueda";
-import { useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
+import { getCharacters } from "../../../api/marvel";
+import { BarraBusqueda } from "../../../components/Web/BarraBusqueda";
 
 import "./Character.scss";
 
@@ -15,14 +13,14 @@ export function Characters() {
   const [searching, setSearching] = useState(null);
 
   useEffect(() => {
-    if(searching === null){
-    getCharacters()
-      .then((response) => {
-        setCharacters(response.data.data.results);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    if (searching === null) {
+      getCharacters()
+        .then((response) => {
+          setCharacters(response.data.data.results);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     }
   }, [searching]);
 
@@ -32,22 +30,34 @@ export function Characters() {
   }
 
   return (
-    <div className = "characters">
-      <BarraBusqueda setterSearch= {setSearching} setterHeroes={setCharacters}/>
+    <div className="characters">
+      <BarraBusqueda setterSearch={setSearching} setterHeroes={setCharacters} />
       <div className="character__inner">
         {characters.map((character) => {
-          if (character.thumbnail.path === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available') return null;
+          if (
+            character.thumbnail.path ===
+            "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available"
+          )
+            return null;
           return (
-            <Link to={`/personajes/${character.id}`} //target="_blank"
-              key={character.id} className="character"
+            <Link
+              to={`/personajes/${character.id}`} //target="_blank"
+              key={character.id}
+              className="character"
               onMouseEnter={() => setHoveredCharacter(character.id)}
               onMouseLeave={() => setHoveredCharacter(null)}
               onClick={() => setSelectedCharacterId(character.id)}
             >
-              <img className = "character__image" src={`${character.thumbnail.path}.${character.thumbnail.extension}`} alt={character.name} />
-              {hoveredCharacter === character.id && 
-                <div className="character__namee animate__animated animate__fadeIn">{character.name}</div>
-              }
+              <img
+                className="character__image"
+                src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+                alt={character.name}
+              />
+              {hoveredCharacter === character.id && (
+                <div className="character__namee animate__animated animate__fadeIn">
+                  {character.name}
+                </div>
+              )}
             </Link>
           );
         })}
@@ -55,54 +65,3 @@ export function Characters() {
     </div>
   );
 }
-//export default Characters;
-
- /* return (
-    <div className = "characters">
-      {characters.map((character) => (
-        <div key={character.id}>
-          <h2>{character.name}</h2>
-          <img className = "character__image" src={`${character.thumbnail.path}.${character.thumbnail.extension}`} alt={character.name} />
-        </div>
-      ))}
-    </div>
-  );
-}*/
-/*return (
-  <div className = "characters">
-    <div className="character__inner">
-    {characters.map((character) => {
-      if (character.thumbnail.path === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available') return null;
-      return (
-        <div key={character.id}>
-          <h2>{character.name}</h2>
-          <img className = "character__image" src={`${character.thumbnail.path}.${character.thumbnail.extension}`} alt={character.name} />
-          <div className="character__namee animate__animated animate__fadeIn">{character.name}</div>
-        </div>
-      );
-    })}
-    </div>
-  </div>
-);
-}*/
-
-/*return (
-
-  <div className = "characters">
-    <div className="character__inner">
-    {characters.map((character) => {
-      if (character.thumbnail.path === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available') return null;
-      return (
-        <div key={character.id} className="character">
-        <div className="character__namee animate__animated animate__fadeIn">{character.name}</div>
-          <img className = "character__image" src={`${character.thumbnail.path}.${character.thumbnail.extension}`} alt={character.name} />
-
-
-</div>
-  );
-})}
-</div>
-</div>
-);
-}*/
-

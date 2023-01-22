@@ -50,11 +50,10 @@
   font-size: 60px;
   font-family: Impact, fantasy;
   text-align: center;
-
 }
 
 .h3_c {
-   color: white;
+  color: white;
   font-size: 30px;
   font-family: Courier, monospace;
   letter-spacing: 4px;
@@ -88,26 +87,26 @@
   border-width: 15px;
   border-style: inset;
 }
-.hijo2{
+.hijo2 {
   width: 60%;
   float: right;
   height: 100%;
   background-image: url("../../../assets/jpg/MarvelHomeBackground.jpg");
-    background-position: center;
-    //background-size: contain;
-    background-size: cover;
-    background-repeat: no-repeat;
+  background-position: center;
+  //background-size: contain;
+  background-size: cover;
+  background-repeat: no-repeat;
   text-align: center;
   margin: 0px auto;
   border-radius: 10px;
   padding: 20px;
 }
 
-.hijo2_2{
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 5px;
-    padding: 15px 5px;
-    //background: linear-gradient(0deg, rgba(187,84,84,1) 0%, rgba(131,48,48,1) 51%, rgba(64,5,5,1) 100%);
+.hijo2_2 {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  padding: 15px 5px;
+  //background: linear-gradient(0deg, rgba(187,84,84,1) 0%, rgba(131,48,48,1) 51%, rgba(64,5,5,1) 100%);
 }
 .hijo3 {
   width: 80%;
@@ -119,6 +118,6 @@
   //background: rgba(233, 9, 9, 0.8);
 }
 
-.contenido_personaje_detail{
+.contenido_personaje_detail {
   margin: 4px 0px;
 }

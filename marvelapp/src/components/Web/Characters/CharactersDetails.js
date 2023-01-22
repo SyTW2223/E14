@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getCharactersById } from "../../../api/marvel";
 import "./CharactersDetails.scss";
 import { User } from "../../../api/user";
@@ -14,8 +14,6 @@ export function CharactersDetails() {
   const navigate = useNavigate();
   let { id } = useParams(); //El nombre ha de ser el mismo con el que se definio el parametro.
   const [characters, setCharacters] = useState([]);
-  const [hoveredCharacter, setHoveredCharacter] = useState(null);
-  const [selectedCharacterId, setSelectedCharacterId] = useState(null);
 
   useEffect(() => {
     getCharactersById(id)
@@ -78,7 +76,6 @@ export function CharactersDetails() {
   return (
     <div className="personaje">
       <div className="character__innerr">
-      
         {characters.map((character) => {
           if (
             character.thumbnail.path ===
@@ -93,10 +90,11 @@ export function CharactersDetails() {
             <div className="Padre">
               <div className="hijo1">
                 <div className="imagen">
-                <img className="img_c"
-                  src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
-                  alt={character.name}
-                />
+                  <img
+                    className="img_c"
+                    src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+                    alt={character.name}
+                  />
                 </div>
                 <div className="like">
                   <Button fluid icon onClick={handleLikeClick}>
@@ -107,47 +105,54 @@ export function CharactersDetails() {
               </div>
               <div className="hijo2">
                 <div className="hijo2_2">
-                <h2 className="hero-info__name">{character.name}</h2>
-                <div className="hero-info">
-                  <h3 className="h3_c">Descripcion </h3>
-                  {descripcion_personaje}
-                  <br></br>
-                </div>
-                
-                <div className="hijo3">
-                <div className="info2">
-                <br></br>
-                  <h3 className="h3_c">Comics </h3>
-                  {character.comics.items.map((c) => (
-                  <div className="contenido_personaje_detail">{c.name}</div>
-                  ))}
-                </div>
-                <div className="info2">
-                <br></br>
-                  <h3 className="h3_c">Series </h3>
-                  {character.series.items.map((s) => (
-                  <div className="contenido_personaje_detail">{s.name}</div>
-                  ))}
-                </div>
-                <div className="info2">
-                <br></br>
-                  <h3 className="h3_c">Eventos </h3>
-                  {character.events.items.map((e) => (
-                  <div className="contenido_personaje_detail" >{e.name}</div>
-                  ))}
-                </div>
-                <div className="info2"><br></br>
-                  <h3 className="h3_c" >Historias </h3>
-                  {character.stories.items.map((stories) => (
-                  <div className="contenido_personaje_detail">{stories.name}</div>
-                  ))}
+                  <h2 className="hero-info__name">{character.name}</h2>
+                  <div className="hero-info">
+                    <h3 className="h3_c">Descripcion </h3>
+                    {descripcion_personaje}
+                    <br></br>
+                  </div>
+
+                  <div className="hijo3">
+                    <div className="info2">
+                      <br></br>
+                      <h3 className="h3_c">Comics </h3>
+                      {character.comics.items.map((c) => (
+                        <div className="contenido_personaje_detail">
+                          {c.name}
+                        </div>
+                      ))}
+                    </div>
+                    <div className="info2">
+                      <br></br>
+                      <h3 className="h3_c">Series </h3>
+                      {character.series.items.map((s) => (
+                        <div className="contenido_personaje_detail">
+                          {s.name}
+                        </div>
+                      ))}
+                    </div>
+                    <div className="info2">
+                      <br></br>
+                      <h3 className="h3_c">Eventos </h3>
+                      {character.events.items.map((e) => (
+                        <div className="contenido_personaje_detail">
+                          {e.name}
+                        </div>
+                      ))}
+                    </div>
+                    <div className="info2">
+                      <br></br>
+                      <h3 className="h3_c">Historias </h3>
+                      {character.stories.items.map((stories) => (
+                        <div className="contenido_personaje_detail">
+                          {stories.name}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
-              </div>
-              </div>
-              
             </div>
-                        
           );
         })}
       </div>
