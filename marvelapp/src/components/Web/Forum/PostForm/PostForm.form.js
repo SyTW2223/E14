@@ -1,16 +1,15 @@
 import * as Yup from "yup";
 
 export function initialValues() {
-    return {
-        titulo: "",
-        comentario: "",
-    };
+  return {
+    titulo: "",
+    comentario: "",
+  };
 }
 
 export function validationSchema() {
-    return Yup.object({
-        titulo: Yup.string().required(true),
-        comentario: Yup.string().required(true),
-    });
-    
+  return Yup.object({
+    titulo: Yup.string().required(true),
+    comentario: Yup.string().required(true),
+  });
 }
