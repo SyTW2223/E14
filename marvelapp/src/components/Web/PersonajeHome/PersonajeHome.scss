@@ -1,9 +1,15 @@
 @import  "~/src/scss/index.scss";
 
 .personajes-title {
+    //text-align: center;
+    //font-size: 2.5em;
+    //font-weight: bold;
+    margin: 50px 20px 20px 20px;
+    color: white;
+    font-size: 60px;
+    font-family: Impact, fantasy;
     text-align: center;
-    font-size: 2.5em;
-    font-weight: bold;
+    text-shadow: rgb(0, 0, 0) 0px 0 20px;
 }
 
 .container__personajes{
