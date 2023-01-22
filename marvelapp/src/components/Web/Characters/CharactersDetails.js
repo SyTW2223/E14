@@ -85,7 +85,7 @@ export function CharactersDetails() {
             descripcion_personaje = "Descripcion no disponible";
           else descripcion_personaje = character.description;
           return (
-            <div className="Padre">
+            <div className="Padre" key={character.id}>
               <div className="hijo1">
                 <div className="imagen">
                   <img
