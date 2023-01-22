@@ -17,6 +17,8 @@
         padding: 20px 0 10px 0;
         border-top: 2px solid white;
         background-color: rgb(237, 29, 36);
+        position: sticky;
+        top: 100%;
 
         > .ui.container {
             display: flex;

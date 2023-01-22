@@ -7,7 +7,6 @@ import { CharactersDetails} from '../../../components/Web';
 export function PersonajesDetallesPagina() {
   return (
     <div>
-        <h1>PERSONAJES UWU</h1>
         <CharactersDetails />
     </div>
   );

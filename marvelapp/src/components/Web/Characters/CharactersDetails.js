@@ -34,13 +34,13 @@ export function CharactersDetails() {
 
   let isFaved;
   let icon_name = "heart";
-  let icon_text = "FAV";
+  let icon_text = " FAV";
   if (user !== null) {
     isFaved = user.personajesFav.some((favName) => favName === value_title);
     if (isFaved) {
       console.log("ya es favorito");
       icon_name = "close";
-      icon_text = "UNFAV";
+      icon_text = " UNFAV";
     }
   }
 
@@ -76,8 +76,9 @@ export function CharactersDetails() {
   };
 
   return (
-    <div className="characters">
-      <div className="character__inner">
+    <div className="personaje">
+      <div className="character__innerr">
+      
         {characters.map((character) => {
           if (
             character.thumbnail.path ===
@@ -89,39 +90,64 @@ export function CharactersDetails() {
             descripcion_personaje = "Descripcion no disponible";
           else descripcion_personaje = character.description;
           return (
-            <div className="hero-info">
-              <img
-                className="characterdetail__image"
-                src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
-                alt={character.name}
-              />
-              <div className="hero-info__right">
-                <h2 className="hero-info__name">{character.name}</h2>
-
-                <h3>Descripcion </h3>
-                <div>{descripcion_personaje}</div>
-                <h3>Comics </h3>
-                {character.comics.items.map((c) => (
-                  <div>{c.name}</div>
-                ))}
-                <h3>Series </h3>
-                {character.series.items.map((s) => (
-                  <div>{s.name}</div>
-                ))}
-                <h3>Eventos </h3>
-                {character.events.items.map((e) => (
-                  <div>{e.name}</div>
-                ))}
-                <h3>Historias </h3>
-                {character.stories.items.map((stories) => (
-                  <div>{stories.name}</div>
-                ))}
+            <div className="Padre">
+              <div className="hijo1">
+                <div className="imagen">
+                <img className="img_c"
+                  src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+                  alt={character.name}
+                />
+                </div>
+                <div className="like">
+                  <Button fluid icon onClick={handleLikeClick}>
+                    <Icon name={icon_name} />
+                    {icon_text}
+                  </Button>
+                </div>
               </div>
-              <Button icon onClick={handleLikeClick}>
-                <Icon name={icon_name} />
-                {icon_text}
-              </Button>
+              <div className="hijo2">
+                <div className="hijo2_2">
+                <h2 className="hero-info__name">{character.name}</h2>
+                <div className="hero-info">
+                  <h3 className="h3_c">Descripcion </h3>
+                  {descripcion_personaje}
+                  <br></br>
+                </div>
+                
+                <div className="hijo3">
+                <div className="info2">
+                <br></br>
+                  <h3 className="h3_c">Comics </h3>
+                  {character.comics.items.map((c) => (
+                  <div className="contenido_personaje_detail">{c.name}</div>
+                  ))}
+                </div>
+                <div className="info2">
+                <br></br>
+                  <h3 className="h3_c">Series </h3>
+                  {character.series.items.map((s) => (
+                  <div className="contenido_personaje_detail">{s.name}</div>
+                  ))}
+                </div>
+                <div className="info2">
+                <br></br>
+                  <h3 className="h3_c">Eventos </h3>
+                  {character.events.items.map((e) => (
+                  <div className="contenido_personaje_detail" >{e.name}</div>
+                  ))}
+                </div>
+                <div className="info2"><br></br>
+                  <h3 className="h3_c" >Historias </h3>
+                  {character.stories.items.map((stories) => (
+                  <div className="contenido_personaje_detail">{stories.name}</div>
+                  ))}
+                </div>
+              </div>
+              </div>
+              </div>
+              
             </div>
+                        
           );
         })}
       </div>

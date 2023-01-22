@@ -3,8 +3,8 @@ import { getComics, getComicsbyId } from '../../../api/marvel';
 import {User} from "../../../api/user"
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import {Button, Icon} from "semantic-ui-react"
-import {useAuth} from "../../../hooks"
-
+import {useAuth} from "../../../hooks";
+import "./ComicDetails.scss";
 
 const usuario_api = new User();
 
@@ -78,7 +78,7 @@ export function ComicsDetails() {
   
   return (
        <div className = "comics">
-         <div className="comic__inner" data-testid="zona_comicdetail">
+         <div className="comic__inner">
            {comics.map((comic) => {
                 //console.log(comic);
                 if (comic.thumbnail.path === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available') return null;
@@ -94,22 +94,46 @@ export function ComicsDetails() {
                 else 
                     isbn_comic = comic.isbn;    
             return (
-                <div className='hero-info'>
-                <img className='characterdetail__image' src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`} alt={comic.title} />
-                <div className='hero-info__right'>
-                  <h2 className='hero-info__name'>{comic.title}</h2>
-                  
-                  <h3>Descripcion </h3>
-                  <div>{descripcion_comic}</div>
-                  <h3>ISBN </h3>
-                  <div>Isbn: {isbn_comic}</div>
-                  <h3>Cantidad de páginas</h3>
-                  <div>Isbn: {comic.pageCount}</div> 
-                  <Button icon onClick={handleLikeClick}>
-                    <Icon name= {icon_name}/>
-                      {icon_text}
+              <div className="Padre_">
+              <div className="hijo1_">
+                <div className="imagen_">
+                <img className="img_"
+                  src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
+                  alt={comic.title}
+                />
+                </div>
+                <div className="like_">
+                  <Button fluid icon onClick={handleLikeClick}>
+                    <Icon name={icon_name} />
+                    {icon_text}
                   </Button>
                 </div>
+              </div>
+              <div className="hijo2_">
+              <div className='hijo2_2'>
+                <h2 className="hero-info__name_">{comic.title}</h2>
+                <div className="hero-info_">
+                  <h3 className="h3_">Descripcion </h3>
+                  {descripcion_comic}
+                  <br></br>
+                </div>
+                
+                <div className="hijo3_">
+                <div className="info2_">
+                <br></br>
+                  <h3 className="h3_">ISBN </h3>
+                  <div> {isbn_comic}</div>
+                  
+                </div>
+                <div className="info2_">
+                <br></br>
+                  <h3 className="h3_">Cantidad de páginas </h3>
+                  <div> {comic.pageCount}</div> 
+                </div>
+                
+                </div>
+                </div>
+              </div>
               </div>
              );
            })}
