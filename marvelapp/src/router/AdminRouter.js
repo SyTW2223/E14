@@ -34,7 +34,6 @@ export  function AdminRouter() {
             element={loadLayout(AdminLayout, SingleUser)}
             />
         ))}
-            <Route path="/auth/:nick" element = {loadLayout(AdminLayout, SingleUser)} />
         </>
        )}
     </Routes>
