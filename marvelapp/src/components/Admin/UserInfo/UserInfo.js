@@ -14,7 +14,7 @@ export function UserInfo() {
   return (
     <div>
       <div className="zona_info_usuario">
-        <h1 className="titulos_secciones">
+        <h1 className="titulos_secciones_h1">
           Información de tu usuario: {user.nickname}
         </h1>
         <Container>
