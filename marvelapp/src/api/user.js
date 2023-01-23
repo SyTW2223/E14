@@ -74,9 +74,10 @@ export class User {
     }
   }
 
-  async updateUser(accessToken, idUser, userData) {
+  async updateUser(accessToken, idUser, userData, type) {
     try {
       const data = userData;
+
       if (!data.password) {
         delete data.password;
       }
@@ -90,20 +91,27 @@ export class User {
         formData.append("avatar", data.fileAvatar);
       }
 
-      const url = `${ENV.BASE_API}/${ENV.API_ROUTES.USER}/${idUser}`;
+      let rutaAPI = ENV.API_ROUTES.UPDATEINFO;
+      if(type === "remove"){
+        rutaAPI = ENV.API_ROUTES.REMOVEINFO;
+      }
+      const url = `${ENV.BASE_API}/${rutaAPI}/${idUser}`;
+      
       const params = {
         method: "PATCH",
         headers: {
           Authorization: `Bearer ${accessToken}`,
+          'Content-Type':'application/json',
         },
-        body: formData,
+        body: userData,
       };
+  
 
       const response = await fetch(url, params);
       const result = await response.json();
 
       if (response.status !== 200) throw result;
-
+  
       return result;
     } catch (error) {
       throw error;
@@ -130,4 +138,27 @@ export class User {
       throw error;
     }
   }
+
+  async getUserByNick(accessToken, nickname) {
+    try {
+      const url = `${this.baseApi}/${ENV.API_ROUTES.USER}/${nickname}`;
+      const params = {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      };
+      const response = await fetch(url, params);
+      const result = await response.json();
+
+      if (response.status !== 200) throw result;
+      //console.log("RESULTADOOO");
+      //console.log(result);
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  }
+
+
 }

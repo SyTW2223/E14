@@ -1,0 +1,38 @@
+@import "~/src/scss/index.scss";
+
+.list-posts {
+  margin-top: 20px;
+  .list {
+    justify-content: center;
+    //background-color: rgb(139, 139, 247);
+
+    .item {
+      width: 100%;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.5);
+      background-image: url("../../../../assets/jpg/MarvelHomeBackground.jpg");
+      background-position: center;
+      //background-size: contain;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border: 1px solid #000;
+      border-radius: 10px;
+      margin: 10px 0px;
+    }
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    a {
+      color: rgb(255, 255, 255) !important;
+      opacity: 0.8;
+      &.active {
+        opacity: 2;
+        border-color: rgb(255, 0, 0) !important;
+      }
+    }
+  }
+}

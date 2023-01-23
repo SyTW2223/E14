@@ -1,0 +1,133 @@
+.zona_info_usuario {
+  //background-color: $background-marvel-red;
+  //background-color: rgba(255, 255, 255, 0.705);
+  width: 80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding: 20px;
+
+  > .ui.container {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 100px;
+    //Con lo de arriba centre el div en la posi correcta.
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    background-image: url("../../../assets/jpg/MarvelHomeBackground.jpg");
+    background-position: center;
+    //background-size: contain;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 80%;
+    border-radius: 20px;
+    text-align: left;
+  }
+}
+
+.texto_usuario {
+  background-color: rgba(255, 255, 255, 0.897);
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.cosas_fav {
+  margin: 0px 0px 50px 0px;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.imagen_usuario {
+  width: 300px;
+  height: 300px;
+}
+.zona_imagen {
+  vertical-align: middle;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.zonaGustos {
+  //background-color: $background-marvel-red;
+  //background-color: rgba(255, 255, 255, 0.705);
+  width: 80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding: 20px;
+
+  > .ui.container {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 40px;
+    //Con lo de arriba centre el div en la posi correcta.
+    justify-content: space-between;
+    background-color: aqua;
+    height: 100%;
+    width: 80%;
+    border-radius: 20px;
+    text-align: left;
+
+    background-image: url("../../../assets/jpg/fondocomic.jpeg");
+    background-position: center;
+    //background-size: contain;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+.titulos_secciones {
+  margin: 50px 20px 20px 20px;
+  color: white;
+  font-size: 60px;
+  font-family: Impact, fantasy;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.titulos_secciones_h1 {
+  margin: 50px 20px 20px 20px;
+  color: white;
+  font-size: 60px;
+  font-family: Impact, fantasy;
+  font-weight: lighter;
+  text-align: center;
+  letter-spacing: 4px;
+}
+
+.titulo_info {
+  color: rgb(160, 0, 0);
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.texto_info {
+  color: rgb(0, 0, 0);
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.titulo_cosas_fav {
+  color: rgb(160, 0, 0);
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  //font-family: monospace;
+}
+
+.info_cosas_fav {
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin: 10px 0px;
+}
