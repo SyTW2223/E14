@@ -7,7 +7,6 @@ import "./../PersonajeHome/PersonajeHome.scss";
 
 export function ComicsHome() {
   const [comics, setComics] = useState([]);
-  const [hoveredComic, setHoveredComic] = useState(null);
 
   useEffect(() => {
     get3RandomComics()
@@ -34,7 +33,7 @@ export function ComicsHome() {
           else
             portada_comic = `${comic.thumbnail.path}.${comic.thumbnail.extension}`;
           return (
-            <div className="personaje-home">
+            <div className="personaje-home" key={comic.id}>
               <img
                 src={portada_comic}
                 alt={comic.title}

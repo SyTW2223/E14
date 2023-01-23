@@ -37,14 +37,11 @@ export function ComicsDetails() {
   if (user !== null) {
     isFaved = user.comicsFav.some((favName) => favName === value_title);
     if (isFaved) {
-      console.log("ya es favorito");
       icon_name = "close";
       icon_text = "UNFAV";
     }
   }
 
-  console.log(value_title);
-  console.log(user);
 
   const comicData = { comicsFav: `${value_title}` };
   const obj = JSON.stringify(comicData);
@@ -93,7 +90,7 @@ export function ComicsDetails() {
           if (comic.isbn === "") isbn_comic = "ISBN no disponible";
           else isbn_comic = comic.isbn;
           return (
-            <div className="Padre_">
+            <div className="Padre_" key={comic.id}>
               <div className="hijo1_">
                 <div className="imagen_">
                   <img

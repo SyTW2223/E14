@@ -1,7 +1,7 @@
 import React from "react";
 import { useAuth } from "../../../hooks";
 import { DateTime } from "luxon";
-import { Container } from "semantic-ui-react";
+import { Container, Divider} from "semantic-ui-react";
 
 import "./UserInfo.scss";
 
@@ -10,26 +10,24 @@ export function UserInfo() {
 
   const date = new Date(user.createdAt);
 
-  console.log("LO DE DEBAJO ES FRANCES");
-  console.log(user);
   //setComics();
   return (
     <div>
       <div className="zona_info_usuario">
-        <h1 className="titulos_secciones">
+        <h1 className="titulos_secciones_h1">
           Información de tu usuario: {user.nickname}
         </h1>
-        <Container classname="container_user">
+        <Container>
           <div className="texto_usuario">
             <h3 className="titulo_info"> Nickname:</h3>
             <div className="texto_info">{user.nickname}</div>
-            <div class="ui divider"></div>
+            <Divider/>
             <h3 className="titulo_info"> Nombre:</h3>
             <div className="texto_info">{user.nombre}</div>
-            <div class="ui divider"></div>
+            <Divider/>
             <h3 className="titulo_info"> Edad:</h3>
             <div className="texto_info">{user.edad}</div>
-            <div class="ui divider"></div>
+            <Divider/>
             <h3 className="titulo_info"> Se unió a la comunidad el día:</h3>
             <span className="texto_info">
               {DateTime.fromISO(date.toISOString())
@@ -48,11 +46,11 @@ export function UserInfo() {
       </div>
       <div className="zonaGustos">
         <h2 className="titulos_secciones">Tus gustos</h2>
-        <Container classname="container_gustos">
+        <Container>
           <div className="cosas_fav">
             <h3 className="titulo_cosas_fav">Comic favoritos</h3>
             <div>
-              <div class="ui divider"></div>
+            <Divider/>
               {user.comicsFav.map((comic) => {
                 return <div className="info_cosas_fav">{comic}</div>;
               })}
@@ -62,7 +60,7 @@ export function UserInfo() {
           <div className="cosas_fav">
             <h3 className="titulo_cosas_fav">Personajes favoritos</h3>
             <div>
-              <div class="ui divider"></div>
+            <Divider/>
               {user.personajesFav.map((heroe) => {
                 return <div className="info_cosas_fav">{heroe}</div>;
               })}

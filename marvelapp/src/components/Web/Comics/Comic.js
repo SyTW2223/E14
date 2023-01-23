@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getComics } from "../../../api/marvel";
 import { Link } from "react-router-dom";
 import { BarraBusquedaComics } from "../BarraBusquedaComics";
+import { Loader } from "semantic-ui-react";
 import "./Comic.scss";
 export function Comics() {
   const [comics, setComics] = useState([]);
@@ -20,6 +21,8 @@ export function Comics() {
     }
   }, [searchingComic]);
 
+  if (!comics) return <Loader active inline="centered" />;
+  
   return (
     <div className="comics" data-testid="zona_comic">
       <BarraBusquedaComics
